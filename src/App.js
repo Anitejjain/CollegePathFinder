@@ -5,6 +5,7 @@ import Home from './Components/Home/Home';
 import Profile from './Components/Profile/Profile';
 import Missing from './Components/Missing/Missing';
 import Nav from './Components/Nav/Nav';
+import Predictor from './Components/CollegePredictor/CollegePredictor';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/profile" element={<Profile />} exact />
+  
+          <Route path="/CollegePredictor" element={<Predictor />} exact />
 
           {/* <Route path="/edit/:id" element={<EditPost />} exact />
 
