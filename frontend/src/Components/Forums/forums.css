@@ -1,0 +1,160 @@
+.upper-half-div {
+    position: relative; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height : 100vh;
+    background-color:  peachpuff;
+}
+
+.college-image {
+    width: 70%;
+    max-width: 90%;
+    max-height: 90%; 
+    opacity: 0.8;
+}
+
+.textbox-overlay {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    display: flex;
+    align-items: center;
+}
+
+.search-input, .post-textarea {
+    width: calc(100% - 80px); 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button, .post-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-button {
+    margin-left: 10px; 
+}
+
+/*  ///////////////////LOWER HALF SECTION//////////////////////////// */
+#lowerHalfDiv{
+    display: flex;
+    flex-direction: row;
+    height: 48vh;
+    flex-direction: column;
+    margin: 20px;
+    border: 2px solid #ccc;
+}
+
+/*  *****recentACtivityDiv1****** */
+#recentAcitivityDiv1{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    border: 2px solid #ccc;
+}
+
+#sortByDiv{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    margin-right: 20%;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#sortByDiv label{
+    font-size: 1.5em;
+}
+
+#options{
+    width: 50%;
+    height: 50%;
+    font-size: 1.5em;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+#buttonsDiv{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: right;
+    gap : 10px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+#buttonsDiv button{
+    width: 100px;
+    height: 30px;
+    font-size: 0.8em;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#buttonsDiv button:hover{
+    background-color: white;
+}
+
+#recentActivityDev2{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    height: 15%;
+    border: 2px solid #ccc;
+}
+
+#recentActivityDev2Col1{
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    font-size: 2em;
+    color: #ccc;
+    /* border: 2px solid #ccc; */
+}
+
+#recentActivityDev2Col2{
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    font-size: 2em;
+    color: #ccc;
+    /* border: 2px solid #ccc; */
+}
+
+#recentActivityDev2Col3{
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    font-size: 2em;
+    color: #ccc;
+    /* border: 2px solid #ccc; */
+}
+
+#recentActivityDev2Col4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    font-size: 1.5em;
+    color: #ccc;
+    /* border: 2px solid #ccc; */
+}
+
+#questionsDiv{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    border: 2px solid #ccc;
+}
