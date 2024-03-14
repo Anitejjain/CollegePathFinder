@@ -4,6 +4,13 @@ import React,{ useState, useEffect } from "react";
 // import Cards from "../Cards/Cards";
 import {BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { FaTwitter, FaFacebook, FaInstagram ,FaLinkedinIn} from 'react-icons/fa';
+import Iitkimage from './Images/IITK.jpg';
+import IitBimage from './Images/IITB.jpg';
+import IitDimage from './Images/IITD.jpg';
+import IitMimage from './Images/IITM.jpg';
+import IitKGPimage from './Images/IITKGP.jpg';
+import IitGimage from './Images/IITG.jpg';
+import IitRoorkeeimage from './Images/IITRoorkee.jpg';
 
 function Home () {
     
@@ -62,39 +69,39 @@ function TopColleges() {
     const data = {
         "slides": [
           {
-            "src": "https://picsum.photos/seed/img1/400/300",
+            "src": IitBimage,
             "alt": "Image 1 for carousel",
-            "text": "Text for Image 1"
+            "text": "IIT Bombay"
           },
           {
-            "src": "https://picsum.photos/seed/img2/400/300",
+            "src": IitMimage,
             "alt": "Image 2 for carousel",
-            "text": "Text for Image 2"
+            "text": "IIT Madras"
           },
           {
-            "src": "https://picsum.photos/seed/img3/400/300",
+            "src": Iitkimage,
             "alt": "Image 3 for carousel",
-            "text": "Text for Image 3"
+            "text": "IIT Kanpur"
           },
           {
-            "src": "https://picsum.photos/seed/img4/400/300",
+            "src": IitGimage,
             "alt": "Image 4 for carousel",
-            "text": "Text for Image 4"
+            "text": "IIT Guwhati"
           },
           {
-            "src": "https://picsum.photos/seed/img5/400/300",
+            "src":IitKGPimage,
             "alt": "Image 5 for carousel",
-            "text": "Text for Image 5"
+            "text": "IIT Kharagpur"
           },
           {
-            "src": "https://picsum.photos/seed/img6/400/300",
+            "src": IitRoorkeeimage,
             "alt": "Image 6 for carousel",
-            "text": "Text for Image 6"
+            "text": "IIT Roorkee"
           },
           {
-            "src": "https://picsum.photos/seed/img7/400/300",
+            "src": IitDimage,
             "alt": "Image 7 for carousel",
-            "text": "Text for Image 7"
+            "text": "IIT Delhi"
           }
         ]
     };
