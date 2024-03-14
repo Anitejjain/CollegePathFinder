@@ -32,10 +32,10 @@ app.post('/registerCollegeS', (req, res) => {
 })
 
 app.post('/registerCollegeG', (req, res) => {
-    const { name, username, email, password, college, major, graduationYear, opinion } = req.body;
+    const { name,address, email, password, college, major, graduationYear, opinion } = req.body;
     bcrypt.hash(password, 10)
         .then(hash => {
-            collegeGoingModel.create({userType: "G", name, username, email, password: hash, college, major, graduationYear, opinion })
+            collegeGoingModel.create({userType: "G", name,address, email, password: hash, college, major, graduationYear, opinion })
                 .then(collegeGoing => res.json(collegeGoing))
                 .catch(err => res.json(err))
         }).catch(err => console.log(err.message))
@@ -137,6 +137,94 @@ app.patch("/profile/updateEmail/:email", (req, res) => {
     collegeGoingModel.findOneAndUpdate(
         { email: email },
         { email: newEmail },
+        { new: true }
+    )
+    .then(user => {
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ message: "User not found" });
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json("Server error");
+    });
+});
+
+app.patch("/profile/updateCollege/:email", (req, res) => {
+    const { email } = req.params;
+    const { newCollege } = req.body;
+
+    collegeGoingModel.findOneAndUpdate(
+        { email: email },
+        { college: newCollege },
+        { new: true }
+    )
+    .then(user => {
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ message: "User not found" });
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json("Server error");
+    });
+});
+
+app.patch("/profile/updateBranch/:email", (req, res) => {
+    const { email } = req.params;
+    const { branch } = req.body;
+
+    collegeGoingModel.findOneAndUpdate(
+        { email: email },
+        { major: branch },
+        { new: true }
+    )
+    .then(user => {
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ message: "User not found" });
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json("Server error");
+    });
+});
+
+app.patch("/profile/updateAddress/:email", (req, res) => {
+    const { email } = req.params;
+    const { address } = req.body;
+
+    collegeGoingModel.findOneAndUpdate(
+        { email: email },
+        { address: address },
+        { new: true }
+    )
+    .then(user => {
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ message: "User not found" });
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json("Server error");
+    });
+});
+
+app.patch("/profile/updateGraduationYear/:email", (req, res) => {
+    const { email } = req.params;
+    const { graduationYear } = req.body;
+
+    collegeGoingModel.findOneAndUpdate(
+        { email: email },
+        { graduationYear: graduationYear },
         { new: true }
     )
     .then(user => {
