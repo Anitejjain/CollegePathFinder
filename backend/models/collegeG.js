@@ -10,13 +10,14 @@ const collegeGSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-    },
-    username: {
-        type: String,
-        required: true,
         unique: true,
         lowercase: true,
         index: true,
+    },
+    address: {
+        type: String,
+        required: true,
+        trim: true,
     },
     password: {
         type: String,
@@ -29,10 +30,12 @@ const collegeGSchema = new mongoose.Schema({
     college: {
         type: String,
         required: true,
+        trim: true,
     },
     major: {
         type: String,
         required: true,
+        trim: true,
     },
     graduationYear: {
         type: String,
