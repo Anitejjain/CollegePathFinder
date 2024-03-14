@@ -8,8 +8,8 @@ import Logo from "./Images/logo.jpg"
 
 function SignupG() {
 	const [name, setName] = useState();
-	const [username, setUsername] = useState();
 	const [password, setPassword] = useState();
+	const [address, setAddress] = useState("");
 	const [email, setEmail] = useState();
 	const [college, setCollege] = useState();
 	const [major, setMajor] = useState();
@@ -18,11 +18,11 @@ function SignupG() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!name || !username || !password || !email || !college || !major || !graduationYear) {
+		if (!name || !address  || !password || !email || !college || !major || !graduationYear) {
 			alert("All fields are required.");
 			return;
 		}
-		axios.post('http://localhost:3001/registerCollegeG', { name, username, password, email, college, major, graduationYear })
+		axios.post('http://localhost:3001/registerCollegeG', { name, address, password, email, college, major, graduationYear })
 			.then(result => {
 				console.log(result);
 				navigate('/loginCollegeG');
@@ -46,8 +46,8 @@ function SignupG() {
 				<div className="login-right-heading">Create Account</div>
 				<form onSubmit={handleSubmit}>
 					<div>
-						<label htmlFor="name">
-							<strong>Name</strong>
+						<label htmlFor="Username">
+							<strong>User Name</strong>
 						</label>
 						<input
 							type="text"
@@ -56,19 +56,6 @@ function SignupG() {
 							name="name"
 							className="form-control rounded-0"
 							onChange={(e) => setName(e.target.value)}
-						/>
-					</div>
-					<div>
-						<label htmlFor="username">
-							<strong>Username</strong>
-						</label>
-						<input
-							type="text"
-							placeholder="Enter Username"
-							autoComplete="off"
-							name="username"
-							className="form-control rounded-0"
-							onChange={(e) => setUsername(e.target.value)}
 						/>
 					</div>
 					<div>
@@ -81,6 +68,19 @@ function SignupG() {
 							name="password"
 							className="form-control rounded-0"
 							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</div>
+					<div>
+						<label htmlFor="address">
+							<strong>Address</strong>
+						</label>
+						<input
+							type="text"
+							placeholder="Enter Address"
+							autoComplete="off"
+							name="address"
+							className="form-control rounded-0"
+							onChange={(e) => setAddress(e.target.value)}
 						/>
 					</div>
 					<div>
